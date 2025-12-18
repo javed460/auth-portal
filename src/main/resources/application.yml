@@ -1,0 +1,25 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /
+  shutdown: graceful
+
+spring:
+  application:
+    name: auth-portal
+
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: auth-portal-client
+            client-secret: YOUR_SECRET
+            scope: openid,profile,email
+            redirect-uri: "http://localhost:8081/login/oauth2/code/keycloak"
+            authorization-grant-type: authorization_code
+            client-name: Keycloak
+
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8080/realms/auth-portal-realm
