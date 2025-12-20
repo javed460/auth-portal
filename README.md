@@ -50,8 +50,12 @@ Spring Security redirects to Keycloak login page
 
 User authenticates on Keycloak
 
+If keycloak-custom-provider jar from https://github.com/javed460/keycloak-custom-provider
+is deployed then user is validated using user-service app https://github.com/javed460/user-service.
+Otherwise, create a sample user in keycloak.
+
 Keycloak redirects back with authorization code
 
 Make sure keycloak server is up and running, use the command to start it
-kc.bat start-dev
+``` kc.bat start-dev ```
 
